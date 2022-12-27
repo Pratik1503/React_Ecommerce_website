@@ -33,7 +33,34 @@ const Contact = () => {
     }
   `;
 
-  return <Wrapper></Wrapper>;
+  return (
+    <Wrapper>
+      <h2 className="common-heading">Contact Page</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30243.549022142197!2d73.7627473279081!3d18.644078353319465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9c02954e8cb%3A0x525d708de1d526f2!2sAkurdi%2C%20Pimpri-Chinchwad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1671471200520!5m2!1sen!2sin"
+        width="100%"
+        height="450"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+      <div className="container">
+        <div className="contact-form">
+          <form className="contact-inputs" action="https://formspree.io/f/xrgvzqqk" method="POST">
+          <input type="text" placeholder="username" name="username" required autoComplete="off"/>
+          <input type="email" placeholder="email" name="email" required autoComplete="off"/>
+          <textarea type="textarea" placeholder="Write Your Message" name="Message" required autoComplete="off"/>
+          <input type="submit" value="Send" />
+          </form>
+        </div>
+      </div>
+    </Wrapper>
+  );
 };
 
 export default Contact;
+
+
+
