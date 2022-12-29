@@ -8,12 +8,13 @@ import { Container } from "./styles/Container";
 import FormatPrice from "./Helpers/FormatPrice";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import { MdSecurity } from "react-icons/md";
+import Star from "./Star";
+import AddToCart from "./component/AddToCart";
 
 const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
-  const { isSingleLoading, singleProduct, getSingleProduct } =
-    useProductContext();
+  const { isSingleLoading, singleProduct, getSingleProduct } =useProductContext();
 
   const { id } = useParams();
 
@@ -48,8 +49,7 @@ const SingleProduct = () => {
 
           <div className="product-data">
             <h2>{name}</h2>
-            <p>{stars}</p>
-            <p>{reviews} reviews</p>
+            <Star stars={stars} reviews={reviews} />
 
             {/* real price */}
             <p className="product-data-price">
@@ -100,9 +100,8 @@ const SingleProduct = () => {
                 Available:{" "}
                 <span>{stock > 0 ? "In-Stock" : "Out-of-Stock"}</span>
               </p>
-            </div>
 
-            {/* id of product */}
+                          {/* id of product */}
             <div>
               ID:<span>{id}</span>
             </div>
@@ -111,6 +110,14 @@ const SingleProduct = () => {
             <div>
               company:<span>{company}</span>
             </div>
+            </div>
+
+            <hr/>
+            {/* color section */}
+
+            { stock >0  && <AddToCart product={singleProduct}  /> }
+
+
           </div>
         </div>
       </Container>
@@ -178,7 +185,7 @@ const Wrapper = styled.section`
     }
     hr {
       max-width: 100%;
-      width: 90%;
+      width: 100%;
       /* height: 0.2rem; */
       border: 0.1rem solid #000;
       color: red;
