@@ -54,6 +54,8 @@ const AddToCart = ({ product }) => {
 const Wrapper = styled.section`
   p {
     display: flex;
+    justify-content:space-between;
+    align-content:center;
   }
 
   .btnStyle {

@@ -3,15 +3,15 @@ import styled from "styled-components";
 import FilterSection from "./component/FilterSection";
 import Sort from "./component/Sort";
 import ProductList from "./component/ProductList";
-import { useFilterContext } from "./context/filter_Context";
+
 
 
 const Products = () => {
   // making two columns
   // 1st column has FilterSection
   // 2 column has two =1)sort row 2)Product view row
-const {filter_products}=useFilterContext();
-console.log("filterProducts "+filter_products);
+
+
   return (
     <Wrapper>
       <div className="container grid grid-filter-column">

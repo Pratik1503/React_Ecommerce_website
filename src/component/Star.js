@@ -42,7 +42,7 @@ const Wrapper = styled.section`
   p {
     position: absolute;
     padding-left: 10rem;
-    top: 29.5rem;
+    top: 31.8rem;
   }
 `;
 
